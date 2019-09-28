@@ -8,4 +8,4 @@ class Objects_class(object):
             test_str = test_str + self.dict[object]["name"]["ru"] + '\n'
         json_answer = {}
         json_answer["text"] = test_str
-        return(json.dumps(json_answer, ensure_ascii=False,))
+        return(json.dumps(json_answer, ensure_ascii=False))

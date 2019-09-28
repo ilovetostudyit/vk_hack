@@ -1,9 +1,9 @@
 import json
-from CLASS.buildings_class import *
-from CLASS.objects_class import *
-from CLASS.events_class import *
-from CLASS.collects_class import *
-from CLASS.museum_class import *
+from json_parse.CLASS.buildings_class import *
+from json_parse.CLASS.objects_class import *
+from json_parse.CLASS.events_class import *
+from json_parse.CLASS.collects_class import *
+from json_parse.CLASS.museum_class import *
 
 def base_navigation():
     museum = Museum_class()
@@ -292,13 +292,13 @@ def init_navigation():
     dict_init(collects_dict, 500, 'col', collect_struct)
     buildings_dict = dict_init(buildings_dict, 500, 'd', building_struct)
     dict_init(events_dict, 500, 'e', event_struct)
-    with open('../JSON/buildings.json', 'r', encoding="utf8") as f:
+    with open('JSON/buildings.json', 'r', encoding="utf8") as f:
         buildings_dict = json.load(f) 
-    with open('../JSON/events.json', 'r', encoding="utf8") as f:
+    with open('JSON/events.json', 'r', encoding="utf8") as f:
         events_dict = json.load(f)    
-    with open('../JSON/objects.json', 'r', encoding="utf8") as f:
+    with open('JSON/objects.json', 'r', encoding="utf8") as f:
         objects_dict = json.load(f) 
-    with open('../JSON/collects.json', 'r', encoding="utf8") as f:
+    with open('JSON/collects.json', 'r', encoding="utf8") as f:
         collects_dict = json.load(f)  
     museum_buildings = Buildings_class(buildings_dict)
     museum_objects = Objects_class(objects_dict)
