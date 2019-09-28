@@ -5,9 +5,7 @@ from django.urls import path
 
 def main(argv=None):
     museum = base_navigation()
-    urlpatterns = [
-        path('museum/objects/', museum.objects.get_list_objects())
-    ]
+    print(museum.buildings.get_list_objects())
 
     return 0
 
