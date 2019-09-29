@@ -85,7 +85,9 @@ class Buildings_class(object):
         return(text)
     
     def get_yandex_link(self, object):
-        text = ""
+        text = "https://yandex.com/maps/?ll="
+        list_basic = self.dict[object]["yamapcoords"].split(',')
+        text = text + list_basic[2] + '%2C' + list_basic[1]+ '&z='+list_basic[0]
         return(text)
     
     def building_navigation(self, building_name, button_pressed):
@@ -106,7 +108,7 @@ class Buildings_class(object):
                 json_answer["text"] = json_answer["text"] + self.get_building_contacts(tanim_object)
                 return(json.dumps(json_answer, ensure_ascii=False,))
             elif button_pressed == "яндекс.карты":
-                json_answer["text"] = json_answer["text"] + self.get_yandex_link(object)
+                json_answer["text"] = json_answer["text"] + "ссылка на Яндекс.Карты:"+ self.get_yandex_link(object)
                 return(json.dumps(json_answer, ensure_ascii=False,))
         else:
             json_answer["text"] = wrong_question()

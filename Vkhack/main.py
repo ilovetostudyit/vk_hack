@@ -13,7 +13,8 @@ def main(argv=None):
     
     print(museum.buildings.building_navigation("галерея","расписание"))
     print(museum.buildings.building_navigation("галерея","контакты"))
-    
+    print(museum.buildings.building_navigation("галерея","яндекс.карты"))
+
     return 0
 
 if __name__ == "__main__":
